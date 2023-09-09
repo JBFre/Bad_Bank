@@ -16,30 +16,58 @@ function CreateAccount() {
     return true;
   }
 
-  function checkCreateAccountFields() {
+  function checkCreateAccountFields(e) {
     if (name.trim() && email && password) {
       setButton(true);
     } else {
       setButton(false);
-    }
-  }
+      
+      let element = e.target.id;
+      if (element === 'name' && name === '') {
+        setStatus('Error: Please enter a valid name');
+        setTimeout(() => setStatus(''), 3000);
+      }
 
+        if (element === 'email' && email === '') {
+        setStatus('Error: Please enter an email address');
+        setTimeout(() => setStatus(''), 3000);
+        
+      }
+    if (element === 'password' && password === '') {
+        setStatus('Error: Please enter a password');
+        setTimeout(() => setStatus(''), 3000);
+        return;
+      }    
+  }
+}
+
+  
   function handleCreate() {
     console.log(name, email, password);
     if (!validate(name, 'name')) return;
+    if (!/^[a-zA-Z]+$/.test(name)) {
+       setStatus('Error: name can only contain letters');
+       setTimeout(() => setStatus(''), 3000);
+       return;
+    }
+
     if (!validate(email, 'email')) return;
+    if (!/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)) {
+      setStatus('Error: email must be in the format of name@name.com');
+      setTimeout(() => setStatus(''), 3000);
+      return;
+  } 
+   
     if (!validate(password, 'password')) return; 
     if (password.length < 8) {
-      setStatus('Error: password must be at least 8 characters');
-      setTimeout(() => setStatus(''), 3000);
+       setStatus('Error: password must be at least 8 characters');
+       setTimeout(() => setStatus(''), 3000);
       return;
     }
     if (!validate(button, 'button')) return;
     ctx.users.push({ name, email, password, balance: 100 });
     setShow(false);
   }
-
- // (values.password1.length < 8)
 
   function clearForm() {
     setName('');
