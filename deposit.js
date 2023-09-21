@@ -72,11 +72,11 @@ function Deposit(){ //function to return the deposit form
       header="Deposit Amount" //sets the header to Deposit Amount
       status={status} //sets the status to the error message
       body={show ? ( //checks if the form is shown
-               <>  
-              Amount<br/> 
+               <> {/*begins the if statement*/}
               <h2> 
                 Balance: ${balance /*shows the balance*/} 
               </h2> 
+              Amount<br/> {/*displays the text Amount*/}
               <input type="input" //returns the input element
                      className="form-control" //sets the class name to form-control
                      id="amount" //sets the id to amount
@@ -88,19 +88,19 @@ function Deposit(){ //function to return the deposit form
               <button type="submit" //returns the button element
                       className="btn btn-light" //sets the class name to btn btn-light
                       disabled={!button} onClick={handleDeposit}>Deposit</button> {/*sets the disabled attribute to the button variable and sets the onClick event to handle the deposit*/}
-              </>
+              </> //ends the if statement 
             ) : ( //if the form is not shown
-              <>
-              <h5>Success</h5> 
-              <h2>
+              <> {/*begins the else statement*/}
+              <h5>Success</h5> {/*displays the text Success*/}
+              <h2> 
                 Balance: ${balance /*shows the balance*/}
-              </h2>  
+              </h2>   
               <button type="submit" //returns the button element
                       className="btn btn-light" //sets the class name to btn btn-light
                       onClick={clearForm /*sets the onClick event to clear the form*/}> 
                       Make another deposit  {/*sets the text to Make another deposit*/}
-              </button>
-            </>
+              </button> {/*ends the button element*/}
+            </> //ends the else statement
             )}  
     />
   )
