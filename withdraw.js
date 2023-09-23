@@ -79,12 +79,13 @@ function Withdraw() { // function to return the withdraw form
       header="Withdraw Amount" //sets the header to Withdraw Amount
       status={status} //sets the status to the error message
       body={show ? ( //checks if the form is shown
-        <>
-          <h2> 
+        <> {/*begins the if statement*/}
+          <h2> {/*displays the following*/}  
             Balance: ${balance /*shows the balance*/}  
-          </h2>
-          Amount<br /> 
-          <input //returns the input field
+          </h2> {/*ends the h2 element*/}
+          Amount {/*displays the text Amount*/}
+          <br/> {/*displays the line break*/} 
+          <input //returns the input element
             type="input" //sets the type to input
             className="form-control" //sets the class name to form-control
             id="amount" //sets the id to amount
@@ -92,29 +93,27 @@ function Withdraw() { // function to return the withdraw form
             value={amount} //sets the value to the amount
             onChange={e => setAmount(e.currentTarget.value)} //sets the onChange event to set the amount to the current target value
             onBlur={checkWithdrawField} //sets the onBlur event to check the withdraw fields
-          /> 
-          <br/>
+          /> {/*ends the input element*/} 
+          <br/> {/*displays the line break*/}
           <button //returns the button element
             type="submit" //sets the type to submit 
             className="btn btn-light" //sets the class name to btn btn-light
             disabled={!button} //disables the button
-            onClick={handleWithdraw /*sets the onClick event to handle the withdraw*/}> 
-          Withdraw 
-          </button>
-        </>
+            onClick={handleWithdraw /*sets the onClick event to handle the withdraw*/}>Withdraw 
+          </button> {/*ends the button element*/}
+        </> //ends the if statement
       ) : ( //if the form is not shown
-        <>
-          <h5>Success</h5>
-          <h2>
+        <> {/*begins the else statement*/}
+          <h5>Success</h5> {/*displays the text Success*/}
+          <h2> {/*displays the following*/}
             Balance: ${balance /*shows the balance*/}
-          </h2> 
-            <button 
-           type="submit" //returns the button element
+          </h2> {/*ends the h2 element*/} 
+            <button /*returns the button element*/ 
+            type="submit" //returns the button element
             className="btn btn-light" //sets the class name to btn btn-light
-            onClick={clearForm /*sets the onClick event to clear the form*/}>
-            Make another withdraw
-          </button>
-        </>
+            onClick={clearForm /*sets the onClick event to clear the form*/}>Make another withdraw
+          </button> {/*ends the button element*/}
+        </> //ends the else statement
       )} //end of else statement
     /> //end of card component
   ); //end of return statement

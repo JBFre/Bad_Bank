@@ -43,28 +43,28 @@ function CreateAccount() {
 
   
   function handleCreate() {
-    console.log(name, email, password);
-    if (!validate(name, 'name')) return;
+    console.log(name,email,password);
+    if (!validate(name,'name')) return;
     if (!/^[a-zA-Z]+$/.test(name)) {
        setStatus('Error: name can only contain letters');
        setTimeout(() => setStatus(''), 3000);
        return;
     }
 
-    if (!validate(email, 'email')) return;
+    if (!validate(email,'email')) return;
     if (!/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)) {
       setStatus('Error: email must be in the format of name@name.com');
       setTimeout(() => setStatus(''), 3000);
       return;
   } 
    
-    if (!validate(password, 'password')) return; 
+    if (!validate(password,'password')) return; 
     if (password.length < 8) {
        setStatus('Error: password must be at least 8 characters');
        setTimeout(() => setStatus(''), 3000);
       return;
     }
-    if (!validate(button, 'button')) return;
+    if (!validate(button,'button')) return;
     ctx.users.push({ name, email, password, balance: 100 });
     setShow(false);
   }
@@ -82,20 +82,16 @@ function CreateAccount() {
       bgcolor="primary"
       header="Create Account"
       status={status}
-      body={show ? (
+      body={show?(
         <>
-            Name<br/>
-            <input type="input" className="form-control" id="name" placeholder="Enter name" value={name} onChange={e => setName(e.currentTarget.value)} onBlur={checkCreateAccountFields}/><br/>
-            Email address<br/>
-            <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.currentTarget.value.trim())} onBlur={checkCreateAccountFields}/><br/>
-            Password<br/>
-            <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value.trim())} onBlur={checkCreateAccountFields}/><br/>
+            Name<br/><input type="input" className="form-control" id="name" placeholder="Enter name" value={name} onChange={e => setName(e.currentTarget.value)} onBlur={checkCreateAccountFields}/><br/>
+            Email address<br/><input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.currentTarget.value.trim())} onBlur={checkCreateAccountFields}/><br/>
+            Password<br/><input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value.trim())} onBlur={checkCreateAccountFields}/><br/>
             <button type="submit" className="btn btn-light" disabled={!button} onClick={handleCreate}>Create Account</button>
         </>
       ) : (
         <>
-          <h5>Success</h5>
-          <button type="submit" className="btn btn-light" onClick={clearForm}>Add another account</button>
+          <h5>Success</h5><button type="submit" className="btn btn-light" onClick={clearForm}>Add another account</button>
         </>
       )}
     />
