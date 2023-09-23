@@ -1,38 +1,47 @@
-function AllData(){ //creates the AllData function
+function AllData() { // Creates the AllData function
   // Step 1: Get the user data from the UserContext
-  const ctx = React.useContext(UserContext); //sets the ctx state to the UserContext
-  const users = ctx.users; //sets the users state to the users array
+  const ctx = React.useContext(UserContext); // Sets the ctx state to the UserContext
+  const users = ctx.users; // Sets the users state to the users array
 
   // Step 2: Convert the users array into an array of table rows
-  const usersRows = users.map((element,index) => ( //sets the usersRows state to the users array
-    <tr key={index}>{/*displays the table row */}
-      <td>{element.name}</td>{/*displays the name */}
-      <td>{element.email}</td>{/*displays the email */}
-      <td>{element.password}</td>{/*displays the password */}
-      <td>{element.balance}</td>{/*displays the balance */}
-    </tr>//ends the table row
-  )); //ends the usersRows variable
+  const usersRows = users.map((element, index) => ( // Sets the usersRows state to the users array
+    <tr key={index}>{/* Displays the table row */}
+      <td>{element.name}</td>{/* Displays the name */}
+      <td>{element.email}</td>{/* Displays the email */}
+      <td>{element.password}</td>{/* Displays the password */}
+      <td>{element.balance}</td>{/* Displays the balance */}
+    </tr>// Ends the table row
+  )); // Ends the usersRows variable
 
-  return( //returns the following
-    <>{/*displays the following */} 
-      <h5>AllData</h5>{/*displays the AllData header */}
+  // Define the inline styles for the table background colors
+  const tableHeaderStyle = {
+    backgroundColor: '#4B4A4A', // Set the background color for the table header
+  };
+
+  const tableBodyStyle = {
+    backgroundColor: '#6F7374', // Set the background color for the table body
+  };
+
+  return ( // Returns the following
+    <>
+      <h5>AllData</h5>{/* Displays the AllData header */}
       {/* Step 3: Output the table */}
       <table className="table table-bordered table-striped">
-        <thead>{/*displays the table header */}
-          <tr>{/*displays the table row */}
-            <th>Name</th>{/*displays the table header Name*/}
-            <th>Email</th>{/*displays the table header Email*/}
-            <th>Password</th>{/*displays the table header Password*/}
-            <th>Balance</th>{/*displays the table header Balance*/}
-          </tr>{/*ends the table row */}
-            </thead>{/*ends the table header */}
-        <tbody>{/*displays the table body */}
+        <thead style={tableHeaderStyle}>{/* Displays the table header */}
+          <tr>{/* Displays the table row */}
+            <th>Name</th>{/* Displays the table header Name */}
+            <th>Email</th>{/* Displays the table header Email */}
+            <th>Password</th>{/* Displays the table header Password */}
+            <th>Balance</th>{/* Displays the table header Balance */}
+          </tr>{/* Ends the table row */}
+        </thead>{/* Ends the table header */}
+        <tbody style={tableBodyStyle}>{/* Displays the table body */}
           {/* Step 3.1 and 3.2: Loop through each element and output it into the table */}
-          {usersRows}{/*displays the usersRows variable......SEE "const usersRows = users.map((element, index) => (" */}
-        </tbody>{/*ends the table body */}
-      </table>{/*ends the table */}
-    </> //ends the AllData component
-  ); //ends the return statement
-} //ends the AllData function
+          {usersRows}{/* Displays the usersRows variable......SEE "const usersRows = users.map((element, index) => (" */}
+        </tbody>{/* Ends the table body */}
+      </table>{/* Ends the table */}
+    </> // Ends the AllData component
+  ); // Ends the return statement
+} // Ends the AllData function
 
-//export default AllData; //exports the AllData component
+// export default AllData; // Exports the AllData component
