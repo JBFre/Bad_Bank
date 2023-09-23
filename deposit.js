@@ -45,8 +45,9 @@ function Deposit(){ //function to return the deposit form
     }
   
     if (!validate(button, 'button')) return; //checks if the button is disabled
-    ctx.users.push({ amount, balance: 100 }); //pushes the amount and balance to the users array
-      
+    //ctx.users.push({ amount, balance: 100 }); //pushes the amount and balance to the users array
+    
+    
     if (!user) { //checks if the user exists
       setStatus('Error: User not found'); //displays the error message when the user is not found
       setTimeout(() => setStatus(''), 3000); //clears the error message after 3 seconds
