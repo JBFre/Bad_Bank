@@ -15,11 +15,13 @@ function AllData() { // Creates the AllData function
 
   // Define the inline styles for the table background colors
   const tableHeaderStyle = { // Sets the tableHeaderStyle state
-    backgroundColor: '#4B4A4A', // Set the background color for the table header
+    backgroundColor: '#6c757d', // Set the background color for the table header
+    color : 'white', // Set the color for the table header
   };
 
   const tableBodyStyle = { // Sets the tableBodyStyle state
-    backgroundColor: '#6F7374', // Set the background color for the table body
+    backgroundColor: '#6c757d', // Set the background color for the table body
+    color : 'white', // Set the color for the table body
   };
 
   return ( // Returns the following
@@ -43,5 +45,3 @@ function AllData() { // Creates the AllData function
     </> // Ends the AllData component
   ); // Ends the return statement
 } // Ends the AllData function
-
-// export default AllData; // Exports the AllData component

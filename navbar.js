@@ -10,7 +10,7 @@ function NavBar() { // This is the main function. When called, it returns the JS
     setCssClassWithdraw('nav-link');
     setCssClassAllData('nav-link');
   }
- 
+
   return ( // This returns the JSX code for the navigation bar.
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark"> {/* Changes the appearance of the navigation bar */}
       <a className="navbar-brand" href="#"> Bank of Zod {/* Creates the navigation bar brand */}</a>
@@ -30,37 +30,37 @@ function NavBar() { // This is the main function. When called, it returns the JS
             <a
               className={cssClass} // Calls the handleNavBarHighlight function and passes the link as an argument
               href="#/CreateAccount/" // Sets the link for the navigation bar item
-              onClick = {() => {resetNavLinkClasses(); setCssClass('nav-link active');}} // Sets the CSS class for the navigation bar item
+              onClick={() => { resetNavLinkClasses(); setCssClass('nav-link active'); }} // Sets the CSS class for the navigation bar item
               title="Create a new bank account" // Added title attribute for the tooltip
             >
               Create Account
             </a>
           </li>{/* Creates the navigation bar item Create Account */}
-          <li className="nav-item">   
+          <li className="nav-item">
             <a
               className={cssClassDeposit} // Calls the handleNavBarHighlight function and passes the link as an argument 
               href="#/deposit/" // Sets the link for the navigation bar item
-              onClick = {() => {resetNavLinkClasses(); setCssClassDeposit('nav-link active');}}
+              onClick={() => { resetNavLinkClasses(); setCssClassDeposit('nav-link active'); }}
               title="Make a deposit into your account" // Added title attribute for the tooltip
             >
               Deposit
             </a>
           </li>{/* Creates the navigation bar item Deposit */}
-          <li className="nav-item"> 
+          <li className="nav-item">
             <a
               className={cssClassWithdraw} // Calls the handleNavBarHighlight function and passes the link as an argument
               href="#/withdraw/" // Sets the link for the navigation bar item
-              onClick = {() => { resetNavLinkClasses(); setCssClassWithdraw('nav-link active');}}
+              onClick={() => { resetNavLinkClasses(); setCssClassWithdraw('nav-link active'); }}
               title="Withdraw money from your account" // Added title attribute for the tooltip
             >
               Withdraw
             </a>
           </li>{/* Creates the navigation bar item Withdraw */}
-          <li className="nav-item"> 
+          <li className="nav-item">
             <a
               className={cssClassAllData} // Calls the handleNavBarHighlight function and passes the link as an argument
               href="#/alldata/" // Sets the link for the navigation bar item
-              onClick = {() => {resetNavLinkClasses(); setCssClassAllData('nav-link active');}}
+              onClick={() => { resetNavLinkClasses(); setCssClassAllData('nav-link active'); }}
               title="View all bank data" // Added title attribute for the tooltip
             >
               AllData
@@ -71,5 +71,3 @@ function NavBar() { // This is the main function. When called, it returns the JS
     </nav>/* Ends the navigation bar */
   );
 } // This ends the NavBar function.
-
-// export default NavBar;
