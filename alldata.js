@@ -1,3 +1,6 @@
+const navigationEntries = performance.getEntriesByType("navigation"); // Get the navigation entries from the Performance Timeline
+console.log("Navigation Type:", navigationEntries[0].type); // Log the navigation type to the console
+
 function AllData() { // Creates the AllData function
   // Step 1: Get the user data from the UserContext
   const ctx = React.useContext(UserContext); // Sets the ctx state to the UserContext

@@ -1,3 +1,6 @@
+const navigationEntries = performance.getEntriesByType("navigation"); // Get the navigation entries from the Performance Timeline
+console.log("Navigation Type:", navigationEntries[0].type); // Log the navigation type to the console
+
 function Deposit() { //function to return the deposit form
   const [show, setShow] = React.useState(true); //sets the show state to true
   const [status, setStatus] = React.useState(''); //sets the status state to an empty string

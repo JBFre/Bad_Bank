@@ -1,3 +1,6 @@
+const navigationEntries = performance.getEntriesByType("navigation"); // Get the navigation entries from the Performance Timeline
+console.log("Navigation Type:", navigationEntries[0].type); // Log the navigation type to the console
+
 const Route = ReactRouterDOM.Route;
 const Link = ReactRouterDOM.Link;
 const HashRouter = ReactRouterDOM.HashRouter;

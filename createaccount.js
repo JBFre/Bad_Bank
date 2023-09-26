@@ -1,3 +1,6 @@
+const navigationEntries = performance.getEntriesByType("navigation"); // Get the navigation entries from the Performance Timeline
+console.log("Navigation Type:", navigationEntries[0].type); // Log the navigation type to the console
+
 function CreateAccount() {
   const [show, setShow] = React.useState(true);
   const [status, setStatus] = React.useState('');

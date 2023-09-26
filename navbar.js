@@ -1,3 +1,6 @@
+const navigationEntries = performance.getEntriesByType("navigation"); // Get the navigation entries from the Performance Timeline
+console.log("Navigation Type:", navigationEntries[0].type); // Log the navigation type to the console
+
 function NavBar() { // This is the main function. When called, it returns the JSX code for the navigation bar.
   const [cssClass, setCssClass] = React.useState('nav-link');
   const [cssClassDeposit, setCssClassDeposit] = React.useState('nav-link');

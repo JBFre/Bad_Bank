@@ -1,3 +1,6 @@
+const navigationEntries = performance.getEntriesByType("navigation"); // Get the navigation entries from the Performance Timeline
+console.log("Navigation Type:", navigationEntries[0].type); // Log the navigation type to the console
+
 function Withdraw() { // function to return the withdraw form
   const [amount, setAmount] = React.useState(''); //sets the amount state to an empty string
   const [show, setShow] = React.useState(true); //sets the show state to true
